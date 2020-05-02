@@ -25,10 +25,7 @@ from user.views import(
 
 from django.views.generic import TemplateView
 from django.conf.urls import url, include 
-from blog.views import (
-	dev_detail_create_view,
 
-)
 # from django.conf.urls import url
 # import IYF_K.views as core_views
 
@@ -47,8 +44,6 @@ urlpatterns = [
 
 	path('', home_page),
 	# path('login/', login)
-	path('blog-new/', dev_detail_create_view),
-	path('blog/', include('blog.urls')),
 	path('user/profile/', profile, name='profile'),
 	path('user/', include('user.urls')),
 	# path('user/register', register, name='register'),

@@ -65,7 +65,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',   # <--
     # 'register_activate',
     'user',
-    'blog', #should be doing one specific thing && pluggable[no need to change when we change the project]
+    # 'blog', #should be doing one specific thing && pluggable[no need to change when we change the project]
 ]
 
 MIDDLEWARE = [
