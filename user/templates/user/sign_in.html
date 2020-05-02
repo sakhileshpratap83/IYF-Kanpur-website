@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
+
+{% load socialaccount %}
+
+
 <div class="container-fluid text-center">
 <form method="post">
 	{% csrf_token %}
@@ -13,11 +17,11 @@
 		<label for="form.username.id_for_label">User Name </label><br>
 		{{form.username}}		
 	</div>
-	<div class="fieldWrapper">
+<!-- 	<div class="fieldWrapper">
 		{{form.email.errors}}
 		<label for="form.email.id_for_label">Or Email </label><br>
 		{{form.email}}
-	</div>
+	</div> -->
 	<div class="fieldWrapper">
 		{{form.password.errors}}
 		<br><label for="form.password.id_for_label">Password </label><br>
@@ -28,8 +32,13 @@
 </form>
 </div>
 
+ 
+  
 <div class="container-fluid bg-grey">
 <div class="redirect text-center">
+
+	<a href="{% provider_login_url 'google' %}">Login with Google</a>
+
 	<h5>Do not have an accout? <a href="/user/signup">Sign up</a> now!</h5>
 </div>
 </div>

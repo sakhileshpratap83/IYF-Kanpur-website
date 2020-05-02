@@ -15,13 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path, include
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 from user.views import(
-	profile_create	
+	profile
 	)
 
+from django.views.generic import TemplateView
 from django.conf.urls import url, include 
-
-
 from blog.views import (
 	dev_detail_create_view,
 
@@ -37,21 +40,32 @@ from .views import (
 	diff_render_page,
 	)
 
+
+
+
 urlpatterns = [
 
 	path('', home_page),
 	# path('login/', login)
 	path('blog-new/', dev_detail_create_view),
 	path('blog/', include('blog.urls')),
-	path('user/profile/', profile_create),
+	path('user/profile/', profile, name='profile'),
 	path('user/', include('user.urls')),
+	# path('user/register', register, name='register'),
     # re_path(r'^blog/(?P<post_id>\w+)/$', indDevoteeDetailPage),
 	re_path(r'^pages?',about_page),
 	path('about/', about_page),
 	path('contact/', contact_page),
 	path('diff_render_page/', diff_render_page),
+    path('', TemplateView.as_view(template_name="user/signin.html")),
     path('admin/', admin.site.urls),
+	path('accounts/', include('allauth.urls')),    
+
     # url(r'^signup/$', core_views.signup, name='signup'),
    	#re_path(r'^register_activate/',include('register_activate.urls')),
     # re_path(r'^admin/', admin.site.urls),
 ]
+
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

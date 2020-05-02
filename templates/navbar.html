@@ -43,7 +43,7 @@
       </li> -->
       {% if request.user.is_authenticated %}
       <li class="nav-item">
-        <a class="nav-link" href="/blog">Devotee Details <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="user/counselees">Counselees <span class="sr-only">(current)</span></a>
       </li>
       {% endif %} 
     </ul>
@@ -74,7 +74,8 @@
     {% else %}
       <ul class="nav navbar-nav navbar-right">
           <li class="nav-item"> 
-          <a class="nav-link" href="/user/signin"><span class="glyphicon glyphicon-log-in"></span>Login/Sign up</a>
+          <span class="glyphicon glyphicon-log-in"></span> 
+          <a class="nav-link" href="/user/signin">Login/Sign up</a>
         </li>
       </ul>
     {% endif %}

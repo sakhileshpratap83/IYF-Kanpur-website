@@ -11,3 +11,6 @@ from __future__ import unicode_literals
 
 class UserConfig(AppConfig):
     name = 'user'
+
+    def ready(self):
+        import user.signals
