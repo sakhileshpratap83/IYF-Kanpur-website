@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from .models import Profile
-from .forms import CreateProfileModelForm, UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from .models import Profile, Brother
+from .forms import CreateProfileModelForm, UserRegisterForm, UserUpdateForm, ProfileUpdateForm, BrotherFormSet
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.db import  transaction
 # views always use pascal case
 from django.contrib.admin.views.decorators import staff_member_required
 # from django.shortcuts import render,redirect
@@ -11,10 +12,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from datetime import *
+from django.views.generic.edit import CreateView
 # import urllib2
 # from urllib.request import urlopen
 from xml.dom import minidom
-from .forms import SigninForm#, SignupForm
+from django.urls import reverse_lazy
+from .forms import SigninForm
 from django.db.models import Count
 import smtplib
 from email.mime.text import MIMEText
@@ -139,26 +142,56 @@ def send_email(toaddr,id):
 	server.sendmail(fromaddr,[toaddr],msg)
 	server.quit()
 
+
+class ProfileBrotherCreate(CreateView):
+    model = Brother
+    fields = ['profile']
+    success_url = reverse_lazy('profile')
+
+    def get_context_data(self, **kwargs):
+        data = super(ProfileBrotherCreate, self).get_context_data(**kwargs)
+        if self.request.POST:
+            data['brothers'] = BrotherFormSet(self.request.POST)
+        else:
+            data['brothers'] = BrotherFormSet()
+        return data
+
+    def form_valid(self, form):
+        context = self.get_context_data()
+        brothers = context['brothers']
+        with transaction.atomic():
+            self.object = form.save()
+
+            if brothers.is_valid():
+                brothers.instance = self.object
+                brothers.save()
+        return super(ProfileBrotherCreate, self).form_valid(form)
+
+
 @login_required(login_url='/user/signin/')
 def profile(request):
 	if request.method == 'POST':
+		# b_formset = BrotherFormset(request.POST, instance=request.user.profile.brother)
 		u_form = UserUpdateForm(request.POST, instance=request.user)
 		p_form = ProfileUpdateForm(request.POST,
 								   request.FILES,
 								   instance=request.user.profile)
-		if u_form.is_valid() and p_form.is_valid():
+		if u_form.is_valid() and p_form.is_valid():# and b_form.is_valid():
 			u_form.save()
 			p_form.save()
+			# for b_form in b_formset:
+			# 	b_form.save()
 			messages.success(request, f'Your account has been updated!')
 			return redirect('profile')
 
 	else:
+		# b_formset = BrotherFormset(request.GET or None)
 		u_form = UserUpdateForm(instance=request.user)
 		p_form = ProfileUpdateForm(instance=request.user.profile)
 
 	context = {
 		'u_form': u_form,
-		'p_form': p_form
+		'p_form': p_form,
 	}
 
 	return render(request, 'user/profile.html', context)
@@ -175,14 +208,36 @@ def profile(request):
 
 	# return render(request, template_name, context)
 
+# def create_brother(request):
+#     template_name = 'user/brother.html'
+#     heading_message = 'Brother Details'
+#     if request.method == 'GET':
+#         formset = BrotherFormset(request.GET or None)
+#     elif request.method == 'POST':
+#         formset = BrotherFormset(request.POST)
+#         if formset.is_valid():
+#             for form in formset:
+#                 # extract name from each form and save
+#                 brother_name = form.cleaned_data.get('brother_name')
+#                 # save book instance
+#                 if brother_name:
+#                     Brother(brother_name=brother_name).save()
+#             # once all books are saved, redirect to book list view
+#             return redirect('user/profile')
+#     return render(request, template_name, {
+#         'formset': formset,
+#         'heading': heading_message,
+#     })
+
+
 
 @staff_member_required
 def counselees(request):# [for retrieve]
-    # obj = get_object_or_404(Devotee_detail, slug = dev_slug)
-    # list out the objects
-    # could be search
-    qs = User.objects.all() #quesryset -> list all python objects[]
-    # qs = Devotee_detail.objects.filter(conselor__icontains = "request.user.profile.full_name") #quesryset -> list filter python objects[]
-    template_name = "user/counselees.html"
-    context = {"counselees": qs}
-    return render(request, template_name, context)
+	# obj = get_object_or_404(Devotee_detail, slug = dev_slug)
+	# list out the objects
+	# could be search
+	qs = User.objects.all() #quesryset -> list all python objects[]
+	# qs = Devotee_detail.objects.filter(conselor__icontains = "request.user.profile.full_name") #quesryset -> list filter python objects[]
+	template_name = "user/counselees.html"
+	context = {"counselees": qs}
+	return render(request, template_name, context)

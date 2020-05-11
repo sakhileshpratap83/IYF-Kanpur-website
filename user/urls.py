@@ -17,7 +17,8 @@ urlpatterns = [
 	re_path(r'^activation/',views.activate, name='activation'),
 	re_path(r'^signin/$',views.sign_in, name='signin'),
 	re_path(r'^logout/$',views.log_out, name='logout'),
-	path('counselees/', views.counselees, name = 'counselees')
+	path('counselees/', views.counselees, name = 'counselees'),
+	path('brother/', views.ProfileBrotherCreate.as_view(), name='brother-add'),
 	]
 urlpatterns +=staticfiles_urlpatterns()
 

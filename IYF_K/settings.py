@@ -51,6 +51,7 @@ ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_USERNAME_REQUIRED = False
 
 INSTALLED_APPS = [
+    'user.apps.UserConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -64,7 +65,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',   # <--
     # 'register_activate',
-    'user',
+    # 'user',
     # 'blog', #should be doing one specific thing && pluggable[no need to change when we change the project]
 ]
 

@@ -4,6 +4,19 @@ from django.contrib.auth.models import User
 from datetime import datetime
 from django.core.validators import RegexValidator
 from PIL import Image
+from django.core.validators import MaxValueValidator, MinValueValidator
+
+
+
+
+
+def current_year():
+	return datetime.today().year
+
+def max_value_current_year(value):
+	return MaxValueValidator(current_year())(value)    
+
+
 # from phone_field import PhoneField
 # from django.utils.encoding import python_2_unicode_compatible
 # from six import python_2_unicode_compatible
@@ -83,9 +96,11 @@ COLLEGE = (
 
 
 
+
+
 class Profile(models.Model):
 	user = models.OneToOneField(User, on_delete = models.CASCADE) #CASCADE delete the user and profile will be deleted
-	# full_name = models.CharField(null = True, max_length=100)
+	full_name = models.CharField(null = True, max_length=100)
 	image = models.ImageField(default = 'default.jpg', upload_to = 'profile_pics')
 	blood_group = models.CharField(default = 'NA', max_length=3, choices =BLOODGROUPS)
 	dob = models.DateField(default = datetime.now)
@@ -96,8 +111,8 @@ class Profile(models.Model):
 	
 	# communication
 	phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Phone number must be entered in the format: '+9999999999'. Up to 12 digits allowed.")
-	mobile = models.CharField(validators=[phone_regex], max_length=12, null=True) # validators should be a list
-	whatsapp = models.CharField(validators=[phone_regex], max_length=12, null=True) # validators should be a list
+	mobile_no = models.CharField(validators=[phone_regex], max_length=12, null=True) # validators should be a list
+	whatsapp_no = models.CharField(validators=[phone_regex], max_length=12, null=True) # validators should be a list
 	
 
 	# #address
@@ -105,16 +120,17 @@ class Profile(models.Model):
 	permanent_address = models.CharField(max_length=250, null=True)
 
 	# #family information
+
 	father_name = models.CharField(max_length=100, null=True)
 	father_mobile_no = models.CharField(validators=[phone_regex], max_length=12, null=True) # validators should be a list
 	# father_mobile_no = models.CharField(max_length=10,, help_text="Please enter 10 digit phone number")
 	mother_name = models.CharField(max_length=100, null=True)
 	mother_mobile_no = models.CharField(validators=[phone_regex], max_length=12, null=True) # validators should be a list
 	# mother_mobile_no = models.CharField(max_length=10,default = '1234567890', help_text="Please enter 10 digit phone number")
-	name_of_brother = models.CharField(max_length=100, null=True)
-	age_of_brother = models.IntegerField(null=True)
+	brother_name = models.CharField(max_length=100, null=True, blank = True)
+	 # = models.IntegerField(null=True)
 	name_of_sister = models.CharField(max_length=100, null=True)
-	age_of_sister = models.IntegerField(null=True)
+	# age_of_sister = models.IntegerField(null=True)
 
 	# #Education
 	
@@ -129,8 +145,8 @@ class Profile(models.Model):
 		return f'{self.user.username} Profile'
 # Create your models here.
 
-	def save(self):
-		super().save()
+	def save(self, *args, **kwargs):
+		super(Profile, self).save(*args, **kwargs)
 
 		img = Image.open(self.image.path)
 
@@ -138,3 +154,17 @@ class Profile(models.Model):
 			output_size = (300, 300)
 			img.thumbnail(output_size)
 			img.save(self.image.path)
+
+
+class Brother(models.Model):
+	profile = models.ForeignKey(Profile, on_delete= models.CASCADE)
+	brother_name = models.CharField(max_length=100)
+	# year_of_birth = models.TypedChoiceField(coerce=int, choices=year_choices, initial=current_year)
+	year_of_birth = models.IntegerField(('Birth year'),null=True, validators=[MinValueValidator(1960), max_value_current_year])
+
+	# class Meta:#?
+	# 	db_table = 'brother'
+
+	def __str__(self):
+		return f'{self.profile} Brother'
+		# return self.name
