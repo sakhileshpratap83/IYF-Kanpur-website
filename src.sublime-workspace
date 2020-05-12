@@ -1,0 +1,461 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"brother",
+				"brother_name"
+			],
+			[
+				"broth",
+				"brotherforms"
+			],
+			[
+				"date",
+				"datetime"
+			],
+			[
+				"year",
+				"year_of_birth"
+			],
+			[
+				"ex",
+				"exclude"
+			],
+			[
+				"B",
+				"Brother"
+			],
+			[
+				"Brother",
+				"Brother"
+			],
+			[
+				"is",
+				"is_valid"
+			],
+			[
+				"in",
+				"instance"
+			],
+			[
+				"Broh",
+				"BrotherFormset"
+			],
+			[
+				"pro",
+				"provider"
+			],
+			[
+				"soc",
+				"sociallogin"
+			],
+			[
+				"user",
+				"user_signed_up"
+			],
+			[
+				"so",
+				"sociallogin"
+			],
+			[
+				"create",
+				"create_profile"
+			],
+			[
+				"si",
+				"signin"
+			],
+			[
+				"regist",
+				"register_activate_dir"
+			],
+			[
+				"def",
+				"default"
+			],
+			[
+				"max",
+				"max_value"
+			],
+			[
+				"name",
+				"name_of_brother"
+			],
+			[
+				"home",
+				"home1"
+			],
+			[
+				"ima",
+				"images"
+			],
+			[
+				"Cre",
+				"CreateProfileModelForm"
+			],
+			[
+				"mar",
+				"MARITALSTATUS"
+			],
+			[
+				"ma",
+				"max_length"
+			],
+			[
+				"Bra",
+				"BRA"
+			],
+			[
+				"Blog",
+				"BlogPostModelForm"
+			],
+			[
+				"obj",
+				"objects"
+			],
+			[
+				"form",
+				"forms"
+			],
+			[
+				"Co",
+				"ContactForm"
+			],
+			[
+				"tem",
+				"template_obj"
+			],
+			[
+				"template",
+				"template_name"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"l",
+				"l"
+			],
+			[
+				"summa",
+				"max_summation"
+			],
+			[
+				"pri",
+				"printLL"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 192.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Yogesh/Desktop/try_django/src"
+	],
+	"file_history":
+	[
+		"/C/Users/Yogesh/Desktop/try_django/testing/testing/models.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/IYF_K/settings.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/views.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/forms.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/admin.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/models.py",
+		"/C/Users/Yogesh/Desktop/try_django/IYF_K.sublime-project",
+		"/C/Users/Yogesh/Desktop/try_django/src/.git/COMMIT_EDITMSG",
+		"/C/Users/Yogesh/Desktop/try_django/src/static/formset/jquery.formset.js",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/templates/user/brother_form.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/templates/user/profile.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/migrations/0010_auto_20200511_1013.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/templates/base.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/templates/user/profile_form.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/templates/user/tex",
+		"/C/Users/Yogesh/Desktop/try_django/src/templates/home.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/urls.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/templates/user/brother.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/templates/navbar.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/signals.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/apps.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/__init__.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/IYF_K/urls.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/templates/user/sign_in.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/.gitignore",
+		"/C/Users/Yogesh/Downloads/Compressed/simple-django-login-and-register-master/README.md",
+		"/C/Users/Yogesh/Desktop/try_django/src/templates/form.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/templates/signup.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/templates/user/log_out.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/templates/user/activation.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/templates/user/sign_up.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/register_activate/models.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/email_auth.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/IYF_K/views.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/register_activate/urls.py",
+		"/C/Users/Yogesh/Downloads/Compressed/simple-django-login-and-register-master/source/content/templates/layouts/default/page.html",
+		"/C/Users/Yogesh/Downloads/Compressed/simple-django-login-and-register-master/source/accounts/templates/accounts/profile/change_profile.html",
+		"/C/Users/Yogesh/Downloads/Compressed/simple-django-login-and-register-master/source/accounts/templates/accounts/log_in.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/register_activate/views.py",
+		"/C/Users/Yogesh/Downloads/Compressed/simple-django-login-and-register-master/source/app/conf/production/settings.py",
+		"/C/Users/Yogesh/Downloads/Compressed/simple-django-login-and-register-master/source/app/settings.py",
+		"/C/Users/Yogesh/Downloads/Compressed/simple-django-login-and-register-master/source/app/conf/development/settings.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/IYF_K/static/css/home.css",
+		"/C/Users/Yogesh/Desktop/try_django/src/IYF_K/templates/base.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/IYF_K/templates/home.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/dashboard/static/css/home.css",
+		"/C/Users/Yogesh/Desktop/try_django/src/dashboard/templates/home.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/templates/profile/#form.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/blog/forms.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/templates/profile/form.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/blog/urls.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/IYF_K/forms.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/profile_pics/DSC09935_ii1tWMS.JPG",
+		"/C/Users/Yogesh/Desktop/try_django/src/blog/templates/blog/list-inline.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/templates/js.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/blog/templates/blog/list-inline",
+		"/C/Users/Yogesh/Desktop/test.doc",
+		"/C/Users/Yogesh/Desktop/try_django/src/blog/models.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/templates/contact.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/blog/templates/blog/form.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/blog/views.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/migrations/__init__.py",
+		"/C/Users/Yogesh/Desktop/machine-learning-ex2/ex2/ex2.m",
+		"/C/Users/Yogesh/Desktop/machine-learning-ex2/ex2/costFunctionReg.m",
+		"/C/Users/Yogesh/Documents/EGDownloads/machine-learning-ex1/ex1/ex1.m",
+		"/C/Users/Yogesh/Desktop/try_django/src/templates/test.txt",
+		"/C/Users/Yogesh/Desktop/try_django/src/templates/dev_list.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/templates/dev_create.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/templates/dev_delete.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/templates/dev_update.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/templates/hello_world.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/IYF_K/IYF_K/urls.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/IYF_K/IYF_K/views.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/IYF_K/IYF_K/settings.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/IYF_K/IYF_K/__pycache__/view.py",
+		"/C/Users/Yogesh/Desktop/ELA/extra/test2.m",
+		"/C/Users/Yogesh/Desktop/ELA/demo.m",
+		"/C/Users/Yogesh/Desktop/ELA/gt_r.m",
+		"/C/Users/Yogesh/Desktop/ELA/extra/test.m",
+		"/C/Users/Yogesh/Desktop/BTP/demo-CFA-Loc/demo.m",
+		"/C/Users/Yogesh/Desktop/BTP_final/matlab-forensics-master/07 - Using noise inconsistencies for blind image forensics/demo_3.m",
+		"/C/Users/Yogesh/Desktop/BTP_final/matlab-forensics-master/07 - Using noise inconsistencies for blind image forensics/demo.m",
+		"/C/Users/Yogesh/Desktop/ELA/analyze.m",
+		"/C/Users/Yogesh/Desktop/BTP/image-forensics-master/image-forensics-master/matlab_toolbox/Algorithms/CFA2/demo.m",
+		"/C/Users/Yogesh/Desktop/ELA/ELA.m",
+		"/C/Users/Yogesh/Desktop/BTP_final/matlab-forensics-master/06 - ELA/ExtractMassSynthetic_New.m",
+		"/C/Users/Yogesh/Desktop/BTP/image-forensics-master/image-forensics-master/matlab_toolbox/Algorithms/CFA3/demo.m",
+		"/C/Users/Yogesh/Desktop/BTP/image-forensics-master/image-forensics-master/matlab_toolbox/Algorithms/CFA3/denoising_dtdwt.m",
+		"/C/Users/Yogesh/Desktop/BTP_final/matlab-forensics-master/06 - ELA/demo.m",
+		"/C/Users/Yogesh/Desktop/BTP/image-forensics-master/image-forensics-master/matlab_toolbox/Algorithms/ELA/demo.m",
+		"/C/Users/Yogesh/Desktop/BTP/image-forensics-master/image-forensics-master/matlab_toolbox/Algorithms/ELA/ELA.m",
+		"/C/Users/Yogesh/Desktop/BTP_final/matlab-forensics-master/06 - ELA/ELA.m",
+		"/C/Users/Yogesh/Desktop/ELA/test.m",
+		"/C/Users/Yogesh/Desktop/ELA/ExtractBiggestBlob.m",
+		"/C/Users/Yogesh/Desktop/ELA/copy_paste_image.m",
+		"/C/Users/Yogesh/Desktop/ELA/interparc.m",
+		"/H/PrabhatDSA/Coding/Basic C ques/knapsackdp.cpp",
+		"/C/Users/Yogesh/Desktop/p_ment/coding/Distinct_palindromic_substring.cpp",
+		"/C/Users/Yogesh/Desktop/BTP/demo-CFA-Loc - Copy/demo.m",
+		"/G/BTP/matlab-forensics-master/04 - Image Forgery Localization via Fine-Grained Analysis of CFA Artifacts/demo.m",
+		"/C/Users/Yogesh/Desktop/BTP_final/matlab-forensics-master/04 - Image Forgery Localization via Fine-Grained Analysis of CFA Artifacts/demo.m",
+		"/C/Users/Yogesh/Desktop/BTP_final/matlab-forensics-master/NotForEvaluations/Analysis of Non-Aligned Double JPEG Artifacts for the Localization of Image Forgeries/NA-DJPG-WIFS2011/demo.m",
+		"/C/Users/Yogesh/Desktop/BTP/demo-CFA-Loc/CFAloc.m",
+		"/C/Users/Yogesh/Desktop/BTP/demo-CFA-Loc - Copy/CFAloc.m",
+		"/H/maha cleaning/BTP/image-forensics-master/image-forensics-master/matlab_toolbox/Util/jpegtbx_1.4/jpeg_read.m",
+		"/H/PrabhatDSA/Coding/Basic C ques/factorial_dp.cpp",
+		"/C/Users/Yogesh/Desktop/p_ment/test/samsung_signal_amplifier.cpp",
+		"/C/Users/Yogesh/Desktop/p_ment/samsungproblem/SAMSUNG QUESTIONS/samsung/Refrigerators/RefrigeratorsSolution.cpp",
+		"/C/Users/Yogesh/Desktop/p_ment/samsungproblem/SAMSUNG QUESTIONS/samsung/PipesSolution/Pipes_Solution.cpp",
+		"/C/Users/Yogesh/Desktop/p_ment/samsungproblem/SAMSUNG QUESTIONS/samsung/PrintingOneCycles/PrintingOneOfCycles.cpp",
+		"/C/Users/Yogesh/Desktop/p_ment/test/count_set_bits.cpp",
+		"/C/Users/Yogesh/Desktop/An offering/Basic C ques/greatest in 3 numbers.cpp",
+		"/C/Users/Yogesh/Desktop/An offering/Basic C ques/selection_sort.cpp",
+		"/C/Users/Yogesh/Desktop/An offering/Basic C ques/2nd Largest using func.cpp",
+		"/C/Users/Yogesh/Desktop/An offering/Basic C ques/max_min.cpp",
+		"/C/Users/Yogesh/Desktop/An offering/Basic C ques/test.c",
+		"/C/Users/Yogesh/Desktop/BTP/demo-CFA-Loc/gaussian_window.m",
+		"/C/Users/Yogesh/Desktop/BTP/demo-CFA-Loc/prediction.m",
+		"/C/Users/Yogesh/Desktop/BTP/demo-CFA-Loc/getFeature.m",
+		"/C/Users/Yogesh/Desktop/BTP/demo-CFA-Loc - Copy/gaussian_window.m",
+		"/C/Program Files/MATLAB/R2017a/toolbox/matlab/audiovideo/+audiovideo/+writer/+profile/UncompressedAVI.m",
+		"/C/Users/Yogesh/Desktop/BTP/demo-CFA-Loc/getVarianceMap.m",
+		"/C/Users/Yogesh/Desktop/An offering/Basic C ques/input line as string_special_format_speccifier.cpp",
+		"/C/Users/Yogesh/Downloads/Compressed/CFA1/CFA1/analyze.m",
+		"/C/Users/Yogesh/Downloads/Compressed/CFA1/CFA1/demo.m",
+		"/C/Users/Yogesh/Downloads/Compressed/demo-CFA-Loc/demo-CFA-Loc/CFAloc.m",
+		"/C/Users/Yogesh/Desktop/BTP/image-forensics-master/image-forensics-master/matlab_toolbox/Algorithms/CFA1/analyze.m",
+		"/C/Users/Yogesh/AppData/Local/Temp/Rar$DI01.875/demo.m"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 122.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 46.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 168.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "src.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 286.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 1
+	}
+}

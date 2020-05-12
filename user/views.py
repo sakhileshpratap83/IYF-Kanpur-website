@@ -1,28 +1,27 @@
-from django.shortcuts import render, redirect
 from .models import Profile, Brother
-from .forms import CreateProfileModelForm, UserRegisterForm, UserUpdateForm, ProfileUpdateForm, BrotherFormSet
+from .forms import CreateProfileModelForm, UserRegisterForm, UserUpdateForm, ProfileUpdateForm, BrotherForm, SigninForm
+from django.forms import modelformset_factory, inlineformset_factory
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db import  transaction
-# views always use pascal case
 from django.contrib.admin.views.decorators import staff_member_required
-# from django.shortcuts import render,redirect
-from django.http import HttpResponseRedirect, HttpResponse,QueryDict
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from datetime import *
-from django.views.generic.edit import CreateView
-# import urllib2
-# from urllib.request import urlopen
-from xml.dom import minidom
-from django.urls import reverse_lazy
-from .forms import SigninForm
+from django.contrib.auth import authenticate, login, logout
+from django.db import  transaction
 from django.db.models import Count
-import smtplib
+from django.http import HttpResponseRedirect, HttpResponse,QueryDict
+from django.views.generic.edit import CreateView
+from django.urls import reverse_lazy
+from xml.dom import minidom
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from django.shortcuts import get_object_or_404
+import smtplib
+from datetime import *
+# import urllib2
+# from django.contrib.auth.decorators import login_required
+# from urllib.request import urlopen
+# from django.shortcuts import render,redirect
+# views always use pascal case
 
 
 fromaddr='yogbulani@gmail.com'
@@ -32,6 +31,51 @@ password='gtvrkzeyahnnvqzb'
 # fromaddr='django.registeractivate@gmail.com'
 # username='django.registeractivate'
 # password='django_register_activate'
+
+
+
+def brother(request):
+	user = request.user
+	broformset = inlineformset_factory(User, Brother, fields=('brother_name','year_of_birth'), can_delete = False, extra =1, max_num = 5)
+	# print(user.username)
+	if request.method == "POST":
+		formset = broformset(request.POST, instance = user)# queryset = Brother.objects.filter(user = user))
+		if formset.is_valid():
+			formset.save()
+			# instances = formset.save(commit=False) #if not commit, then it gives integrity error since it updated brother_name didn't got the user_id and it cannot be null
+			# for instance in instances:
+			# 	instance.user = user
+			# 	instance.save()
+
+			redirect('/user/brother')
+	formset = broformset(instance = user)#queryset = Brother.objects.filter(user = user))
+
+	return render(request, 'brother.html', {'formset':formset})
+# class ProfileBrotherCreate(CreateView):
+# 	model = Brother
+# 	fields = ['user']
+# 	success_url = reverse_lazy('profile')
+
+# 	def get_context_data(self, **kwargs):
+# 		data = super(ProfileBrotherCreate, self).get_context_data(**kwargs)
+# 		if self.request.POST:
+# 			data['brothers'] = BrotherFormSet(self.request.POST)
+# 		else:
+# 			data['brothers'] = BrotherFormSet()
+# 		return data
+
+# 	def form_valid(self, form):
+# 		context = self.get_context_data()
+# 		brothers = context['brothers']
+# 		with transaction.atomic():
+# 			self.object = form.save()
+
+# 			if brothers.is_valid():
+# 				brothers.instance = self.object
+# 				brotherforms = brothers.save(commit = False)
+# 				brothers.user = request.user
+# 				brotherforms.save()
+# 		return super(ProfileBrotherCreate, self).form_valid(form)
 
 
 def register(request):
@@ -143,42 +187,22 @@ def send_email(toaddr,id):
 	server.quit()
 
 
-class ProfileBrotherCreate(CreateView):
-    model = Brother
-    fields = ['profile']
-    success_url = reverse_lazy('profile')
-
-    def get_context_data(self, **kwargs):
-        data = super(ProfileBrotherCreate, self).get_context_data(**kwargs)
-        if self.request.POST:
-            data['brothers'] = BrotherFormSet(self.request.POST)
-        else:
-            data['brothers'] = BrotherFormSet()
-        return data
-
-    def form_valid(self, form):
-        context = self.get_context_data()
-        brothers = context['brothers']
-        with transaction.atomic():
-            self.object = form.save()
-
-            if brothers.is_valid():
-                brothers.instance = self.object
-                brothers.save()
-        return super(ProfileBrotherCreate, self).form_valid(form)
 
 
 @login_required(login_url='/user/signin/')
 def profile(request):
+	BroFormSet = inlineformset_factory(User, Brother, form = BrotherForm, fields=('brother_name','year_of_birth'), can_delete = True, extra =1, max_num = 5)
 	if request.method == 'POST':
 		# b_formset = BrotherFormset(request.POST, instance=request.user.profile.brother)
 		u_form = UserUpdateForm(request.POST, instance=request.user)
 		p_form = ProfileUpdateForm(request.POST,
 								   request.FILES,
 								   instance=request.user.profile)
-		if u_form.is_valid() and p_form.is_valid():# and b_form.is_valid():
+		b_formset = BroFormSet(request.POST, instance = request.user)
+		if u_form.is_valid() and p_form.is_valid() and b_formset.is_valid():# and b_form.is_valid():
 			u_form.save()
 			p_form.save()
+			b_formset.save()
 			# for b_form in b_formset:
 			# 	b_form.save()
 			messages.success(request, f'Your account has been updated!')
@@ -188,10 +212,11 @@ def profile(request):
 		# b_formset = BrotherFormset(request.GET or None)
 		u_form = UserUpdateForm(instance=request.user)
 		p_form = ProfileUpdateForm(instance=request.user.profile)
-
+		b_formset = BroFormSet(instance = request.user)
 	context = {
 		'u_form': u_form,
 		'p_form': p_form,
+		'b_formset' : b_formset,
 	}
 
 	return render(request, 'user/profile.html', context)
@@ -236,7 +261,7 @@ def counselees(request):# [for retrieve]
 	# obj = get_object_or_404(Devotee_detail, slug = dev_slug)
 	# list out the objects
 	# could be search
-	qs = User.objects.all() #quesryset -> list all python objects[]
+	qs = User.objects.all() #queryset -> list all python objects[]
 	# qs = Devotee_detail.objects.filter(conselor__icontains = "request.user.profile.full_name") #quesryset -> list filter python objects[]
 	template_name = "user/counselees.html"
 	context = {"counselees": qs}
