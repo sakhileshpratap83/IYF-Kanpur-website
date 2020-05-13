@@ -133,6 +133,7 @@ def sign_in(request):
 		form=SigninForm(request.POST)
 		if form.is_valid():
 			username=request.POST['username']
+			# email = request.POST['email']
 			password=request.POST['password']
 			user=authenticate(username=username,password=password)
 			if user is not None:

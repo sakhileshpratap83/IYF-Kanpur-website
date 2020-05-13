@@ -4,6 +4,66 @@
 		"selected_items":
 		[
 			[
+				"aut",
+				"autofocus\tAttr"
+			],
+			[
+				"id",
+				"id_for_label"
+			],
+			[
+				"User",
+				"Username"
+			],
+			[
+				"fn",
+				"font-family\tproperty"
+			],
+			[
+				"st",
+				"style\tTag"
+			],
+			[
+				"__",
+				"__all__"
+			],
+			[
+				"b_form",
+				"b_formset"
+			],
+			[
+				"b_fro",
+				"b_formset"
+			],
+			[
+				"b_for",
+				"b_formset"
+			],
+			[
+				"in",
+				"inlineformset_factory"
+			],
+			[
+				"que",
+				"queryset"
+			],
+			[
+				"quer",
+				"quesryset"
+			],
+			[
+				"bro",
+				"broformset"
+			],
+			[
+				"form",
+				"formset"
+			],
+			[
+				"model",
+				"modelformset_factory"
+			],
+			[
 				"brother",
 				"brother_name"
 			],
@@ -34,10 +94,6 @@
 			[
 				"is",
 				"is_valid"
-			],
-			[
-				"in",
-				"instance"
 			],
 			[
 				"Broh",
@@ -116,10 +172,6 @@
 				"objects"
 			],
 			[
-				"form",
-				"forms"
-			],
-			[
 				"Co",
 				"ContactForm"
 			],
@@ -151,6 +203,41 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "static/css/home.css",
+			"settings":
+			{
+				"buffer_size": 6313,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "user/templates/user/sign_in.html",
+			"settings":
+			{
+				"buffer_size": 3059,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "user/templates/user/register.html",
+			"settings":
+			{
+				"buffer_size": 1776,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "user/views.py",
+			"settings":
+			{
+				"buffer_size": 9688,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -200,29 +287,35 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Yogesh/Desktop/try_django/src"
+		"/C/Users/Yogesh/Desktop/try_django/src",
+		"/C/Users/Yogesh/Desktop/try_django/src/static",
+		"/C/Users/Yogesh/Desktop/try_django/src/static/css",
+		"/C/Users/Yogesh/Desktop/try_django/src/user",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/templates",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/templates/user"
 	],
 	"file_history":
 	[
-		"/C/Users/Yogesh/Desktop/try_django/testing/testing/models.py",
-		"/C/Users/Yogesh/Desktop/try_django/src/IYF_K/settings.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/static/css/home.css",
+		"/C/Users/Yogesh/Desktop/try_django/src/templates/base.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/templates/navbar.html",
 		"/C/Users/Yogesh/Desktop/try_django/src/user/views.py",
 		"/C/Users/Yogesh/Desktop/try_django/src/user/forms.py",
-		"/C/Users/Yogesh/Desktop/try_django/src/user/admin.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/templates/user/brother.html",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/templates/user/profile.html",
 		"/C/Users/Yogesh/Desktop/try_django/src/user/models.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/urls.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/user/admin.py",
+		"/C/Users/Yogesh/Desktop/try_django/testing/testing/models.py",
+		"/C/Users/Yogesh/Desktop/try_django/src/IYF_K/settings.py",
 		"/C/Users/Yogesh/Desktop/try_django/IYF_K.sublime-project",
 		"/C/Users/Yogesh/Desktop/try_django/src/.git/COMMIT_EDITMSG",
 		"/C/Users/Yogesh/Desktop/try_django/src/static/formset/jquery.formset.js",
 		"/C/Users/Yogesh/Desktop/try_django/src/user/templates/user/brother_form.html",
-		"/C/Users/Yogesh/Desktop/try_django/src/user/templates/user/profile.html",
 		"/C/Users/Yogesh/Desktop/try_django/src/user/migrations/0010_auto_20200511_1013.py",
-		"/C/Users/Yogesh/Desktop/try_django/src/templates/base.html",
 		"/C/Users/Yogesh/Desktop/try_django/src/user/templates/user/profile_form.html",
 		"/C/Users/Yogesh/Desktop/try_django/src/user/templates/user/tex",
 		"/C/Users/Yogesh/Desktop/try_django/src/templates/home.html",
-		"/C/Users/Yogesh/Desktop/try_django/src/user/urls.py",
-		"/C/Users/Yogesh/Desktop/try_django/src/user/templates/user/brother.html",
-		"/C/Users/Yogesh/Desktop/try_django/src/templates/navbar.html",
 		"/C/Users/Yogesh/Desktop/try_django/src/user/signals.py",
 		"/C/Users/Yogesh/Desktop/try_django/src/user/apps.py",
 		"/C/Users/Yogesh/Desktop/try_django/src/user/__init__.py",
@@ -330,12 +423,11 @@
 		"/C/Users/Yogesh/Downloads/Compressed/CFA1/CFA1/analyze.m",
 		"/C/Users/Yogesh/Downloads/Compressed/CFA1/CFA1/demo.m",
 		"/C/Users/Yogesh/Downloads/Compressed/demo-CFA-Loc/demo-CFA-Loc/CFAloc.m",
-		"/C/Users/Yogesh/Desktop/BTP/image-forensics-master/image-forensics-master/matlab_toolbox/Algorithms/CFA1/analyze.m",
-		"/C/Users/Yogesh/AppData/Local/Temp/Rar$DI01.875/demo.m"
+		"/C/Users/Yogesh/Desktop/BTP/image-forensics-master/image-forensics-master/matlab_toolbox/Algorithms/CFA1/analyze.m"
 	],
 	"find":
 	{
-		"height": 32.0
+		"height": 44.0
 	},
 	"find_in_files":
 	{
@@ -349,6 +441,30 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"email",
+			"csrf",
+			"csr",
+			"post",
+			"form",
+			"static",
+			"nav",
+			"login",
+			"default",
+			"caro",
+			"navbar",
+			"brand",
+			"IYF",
+			"login",
+			"brotherForm",
+			"BrotherForm",
+			"BrotherFormfields",
+			"form",
+			"BrotherFormfields",
+			"href",
+			"que",
+			"ques",
+			"quer",
+			"request.User"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -366,8 +482,127 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "static/css/home.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6313,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6215,
+								6215
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3550.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "user/templates/user/sign_in.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3059,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2050,
+								2050
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 611.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "user/templates/user/register.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1776,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								874,
+								874
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 92.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "user/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9688,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4701,
+								4701
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3036.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -452,7 +687,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 286.0,
+	"side_bar_width": 187.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
