@@ -13,22 +13,9 @@
             <h5 class="card-title text-center">Sign In</h5>
             <form method="POST" class="form-signin">{%csrf_token%}
               <div class="form-label-group">
-                <!-- {{form.username.errors}} -->
-				<!-- <input type="{{form.username}}" id="form.username.id_for_label" class="form-control" placeholder="Username" required autofocus> -->
-				<input type="text" name="username" maxlength="100" class="form-control" placeholder="Username" required="" id="id_username">
-				<label for="form.username.id_for_label">Username </label>
-				<!-- {{ form.username }} -->
+              	{{form|crispy}}
               </div>
-
-              <div class="form-label-group">
-                <!-- {{form.password.errors}} -->
-                <!-- <input type="password" id="form.password.id_for_label" class="form-control" placeholder="Password" required> -->
-                <!-- <label for="inputPassword">Password</label> -->
-				<input type="password" name="password" maxlength="100" class='form-control 'required="" id="id_password" placeholder="Password">
-				<label for="form.password.id_for_label">Password </label>
-				<!-- {{ form.password }} -->
-				<!-- <input type="password" class="form-control" id="form.password.id_for_label" placeholder="Password Name" required> -->
-              </div>
+              
 		  <!-- <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Sign in</legend>
                 
@@ -81,7 +68,7 @@
 
 
 
-<div class="container-fluid text-center">
+<!-- <div class="container-fluid text-center">
 <form method="post">
 	{% csrf_token %}
 	{{form.non_field_errors}}
@@ -94,11 +81,11 @@
 		<label for="form.username.id_for_label">User Name </label><br>
 		{{form.username}}		
 	</div>
-<!-- 	<div class="fieldWrapper">
+	<div class="fieldWrapper">
 		{{form.email.errors}}
 		<label for="form.email.id_for_label">Or Email </label><br>
 		{{form.email}}
-	</div> -->
+	</div>
 	<div class="fieldWrapper">
 		{{form.password.errors}}
 		<br><label for="form.password.id_for_label">Password </label><br>
@@ -119,5 +106,5 @@
 	<h5>Do not have an accout? <a href="/user/signup">Sign up</a> now!</h5>
 </div>
 </div>
-
+ -->
 {% endblock %}

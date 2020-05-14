@@ -40,16 +40,16 @@ class UserRegisterForm(UserCreationForm):
 
         
 class SigninForm(forms.Form):
-    username = forms.CharField(label="User name ",required=False, max_length=100)
-    email=forms.EmailField(label="Your email ", required=False, max_length=100)
+    username = forms.CharField(label="User name ",required=True, max_length=100)
+    # email=forms.EmailField(label="Your email ", required=False, max_length=100)
     password = forms.CharField(label="Password ", widget=forms.PasswordInput(), max_length=100)
     def clean(self):
         cleaned_data=super(SigninForm,self).clean()
         username=cleaned_data.get("username")
-        email=cleaned_data.get("email")
+        # email=cleaned_data.get("email")
         password=cleaned_data.get("password")
-        if not (username or email):
-            msg="Please input your user name or email!"
+        if not (username):# or email):
+            msg="Please input your user name"# or email!"
             self.add_error('username',msg)
         lookup=None
         if username:
@@ -59,16 +59,14 @@ class SigninForm(forms.Form):
             elif not authenticate(username=username,password=password):
                 msg="User name and password does not match!"
                 self.add_error('password',msg)
-        else:
-            if User.objects.filter(email=email).count()==0:
-                msg="Email does not exist!"
-                self.add_error('email',msg)
-            elif not authenticate(username=email,password=password):
-                msg="Email and password does not match!"
-                self.add_error('password',msg)
+        # else:
+        #     if User.objects.filter(email=email).count()==0:
+        #         msg="Email does not exist!"
+        #         self.add_error('email',msg)
+        #     elif not authenticate(username=email,password=password):
+        #         msg="Email and password does not match!"
+        #         self.add_error('password',msg)
         return cleaned_data
-
-
 
 def make_salt():
     ###Your code here
