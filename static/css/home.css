@@ -66,8 +66,9 @@ ul {
   background: #ffffff;
   padding: 10px 20px;
   border: 3px solid #dddddd;
-  border-radius: 3px;
+  border-radius: 10px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .article-title {
@@ -306,6 +307,7 @@ body {
   color: #777;
 }
 
+
 .btn-google {
   color: white;
   background-color: #ea4335;
@@ -348,3 +350,4 @@ body {
     /* z-index: 1000; */
     text-align: center;
 }
+

@@ -70,7 +70,11 @@ COLLEGE = (
 	('other', 'Other'),
 	)
 
-
+CATEGORY = (
+	('gs', 'Voice GS'),
+	('ns', 'Voice NS'),
+	('pre', 'Prerna'),
+)
 
 
 class Brother(models.Model):
@@ -86,6 +90,46 @@ class Brother(models.Model):
 		return f'{self.user} brother'
 
 
+class Education(models.Model):
+	user = models.OneToOneField(User, on_delete = models.CASCADE) #CASCADE delete the user and profile will be deleted
+	graduation = models.CharField(max_length=10, null = True, choices = GRADUATION)
+	stream = models.CharField(max_length=50, null = True)
+	year_of_passout = models.IntegerField(('Year of Passout'),null=True, validators=[MinValueValidator(1960), max_value_current_year])
+	college = models.CharField(max_length=15,null = True, choices = COLLEGE)
+
+
+	def __str__(self):
+		return f'{self.user.username} Education'
+
+class Profession(models.Model):
+	user = models.OneToOneField(User, on_delete = models.CASCADE) #CASCADE delete the user and profile will be deleted
+	company = models.CharField(('Name of Company/Institute/Organization'), max_length=50, null = True,blank = True)
+	post = models.CharField(('Post/Position/Profile'), max_length=50, null = True, blank = True)
+	# Job Location (City, State):
+	salary_pa = models.IntegerField(('Salary per annum'),null=True, blank = True)
+	salary_pm = models.IntegerField(('Salary per month'),null=True, blank = True)
+	
+	def __str__(self):
+		return f'{self.user.username} Profession'
+	
+
+class Devotional(models.Model):
+	user = models.OneToOneField(User, on_delete = models.CASCADE) #CASCADE delete the user and profile will be deleted
+	year_introduce = models.IntegerField(('Year of introduction to ISKCON'),null=True, validators=[MinValueValidator(1960), max_value_current_year])
+	who_introduce = models.CharField(('Who introduced you to ISKCON'), max_length=50, null = True)
+	counselor = models.CharField(('Counselor or Care Taker devotee from ISKCON, to whom you are connected)'), max_length=50, null = True)
+	# Job Location (City, State):
+	japa_rounds = models.IntegerField(('Number of rounds chanting'),null=True, validators=[MinValueValidator(0), MinValueValidator(16)])
+	started_japa = models.DateField(("Chanting Since (Month and Year)"),  default = datetime.now)
+	started_16japa = models.DateField(("Chanting 16 rounds since (Month and Year)"), default = datetime.now, blank = True)
+	category = models.CharField(("Category"),null = True, max_length=10, choices=CATEGORY)
+	initiated_name = models.CharField(("Initiated Name (if initiated)"),null = True, max_length=100)
+	sm_name = models.CharField(("Spiritual Master"),null = True, max_length=100, help_text="Spiritual Master (if initiated) or aspiring spiritual master (if not initiated)")
+
+
+	def __str__(self):
+		return f'{self.user.username} Profession'
+	
 # class State(models.Model):
 #     name = models.CharField(max_length=30)
 
@@ -136,10 +180,10 @@ class Profile(models.Model):
 
 	# #Education
 	
-	# graduation = models.CharField(max_length=10,default='btech', choices = GRADUATION)
-	# stream = models.CharField(max_length=50)
-	# year_of_passout = models.IntegerField()
-	# college = models.CharField(max_length=15,default='iitbhu', choices = COLLEGE)
+	graduation = models.CharField(max_length=10, null = True, choices = GRADUATION)
+	stream = models.CharField(max_length=50, null = True)
+	year_of_passout = models.IntegerField(('Year of Passout'),null=True, validators=[MinValueValidator(1960), max_value_current_year])
+	college = models.CharField(max_length=15,null = True, choices = COLLEGE)
 
 
 	def __str__(self):

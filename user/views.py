@@ -34,23 +34,6 @@ password='gtvrkzeyahnnvqzb'
 
 
 
-def brother(request):
-	user = request.user
-	broformset = inlineformset_factory(User, Brother, fields=('brother_name','year_of_birth'), can_delete = False, extra =1, max_num = 5)
-	# print(user.username)
-	if request.method == "POST":
-		formset = broformset(request.POST, instance = user)# queryset = Brother.objects.filter(user = user))
-		if formset.is_valid():
-			formset.save()
-			# instances = formset.save(commit=False) #if not commit, then it gives integrity error since it updated brother_name didn't got the user_id and it cannot be null
-			# for instance in instances:
-			# 	instance.user = user
-			# 	instance.save()
-
-			redirect('/user/brother')
-	formset = broformset(instance = user)#queryset = Brother.objects.filter(user = user))
-
-	return render(request, 'brother.html', {'formset':formset})
 # class ProfileBrotherCreate(CreateView):
 # 	model = Brother
 # 	fields = ['user']
@@ -192,35 +175,35 @@ def send_email(toaddr,id):
 
 @login_required(login_url='/user/signin/')
 def profile(request):
-	BroFormSet = inlineformset_factory(User, Brother, form = BrotherForm, fields=('brother_name','year_of_birth'), can_delete = True, extra =1, max_num = 5)
+	# BroFormSet = inlineformset_factory(User, Brother, form = BrotherForm, fields=('brother_name','year_of_birth'), can_delete = True, extra =1, max_num = 5)
 	if request.method == 'POST':
 		# b_formset = BrotherFormset(request.POST, instance=request.user.profile.brother)
 		u_form = UserUpdateForm(request.POST, instance=request.user)
 		p_form = ProfileUpdateForm(request.POST,
 								   request.FILES,
 								   instance=request.user.profile)
-		b_formset = BroFormSet(request.POST, instance = request.user)
-		if u_form.is_valid() and p_form.is_valid() and b_formset.is_valid():# and b_form.is_valid():
+		# b_formset = BroFormSet(request.POST, instance = request.user)
+		if u_form.is_valid() and p_form.is_valid():# and b_formset.is_valid():# and b_form.is_valid():
 			u_form.save()
 			p_form.save()
-			b_formset.save()
+			# b_formset.save()
 			# for b_form in b_formset:
 			# 	b_form.save()
 			messages.success(request, f'Your account has been updated!')
-			return redirect('profile')
+			return redirect('/user/brother')
 
 	else:
 		# b_formset = BrotherFormset(request.GET or None)
 		u_form = UserUpdateForm(instance=request.user)
 		p_form = ProfileUpdateForm(instance=request.user.profile)
-		b_formset = BroFormSet(instance = request.user)
+		# b_formset = BroFormSet(instance = request.user)
 	context = {
 		'u_form': u_form,
 		'p_form': p_form,
-		'b_formset' : b_formset,
+		# 'b_formset' : b_formset,
 	}
 
-	return render(request, 'user/profile.html', context)
+	return render(request, 'user/profile copy.html', context)
 	# form = CreateProfileModelForm(request.POST or None)
 	# if form.is_valid():
 	#     form.save()
@@ -255,6 +238,42 @@ def profile(request):
 #         'heading': heading_message,
 #     })
 
+@login_required
+def brother(request):
+	BroFormSet = inlineformset_factory(User, Brother, form = BrotherForm, fields=('brother_name','year_of_birth'), can_delete = True, extra =1, max_num = 5)
+	if request.method == 'POST':
+		b_formset = BroFormSet(request.POST, instance = request.user)
+		if b_formset.is_valid():
+			b_formset.save()
+			# for b_form in b_formset:
+			# 	b_form.save()
+			messages.success(request, f'Your brother details has been updated!')
+			return redirect('/user/brother')
+	else:
+		# b_formset = BrotherFormset(request.GET or None)
+		b_formset = BroFormSet(instance = request.user)
+	context = {
+		'b_formset' : b_formset,
+	}
+	return render(request, 'user/brother.html', context)
+	
+# def brother(request):
+# 	user = request.user
+# 	broformset = inlineformset_factory(User, Brother, fields=('brother_name','year_of_birth'), can_delete = False, extra =1, max_num = 5)
+# 	# print(user.username)
+# 	if request.method == "POST":
+# 		formset = broformset(request.POST, instance = user)# queryset = Brother.objects.filter(user = user))
+# 		if formset.is_valid():
+# 			formset.save()
+# 			# instances = formset.save(commit=False) #if not commit, then it gives integrity error since it updated brother_name didn't got the user_id and it cannot be null
+# 			# for instance in instances:
+# 			# 	instance.user = user
+# 			# 	instance.save()
+
+# 			redirect('/user/brother')
+# 	formset = broformset(instance = user)#queryset = Brother.objects.filter(user = user))
+
+# 	return render(request, 'brother.html', {'formset':formset})
 
 
 @staff_member_required

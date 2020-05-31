@@ -1,6 +1,6 @@
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
 from django import forms
-from .models import Profile, Brother
+from .models import Profile, Brother, Education, Profession, Devotional
 from django.forms import ModelForm, CharField, inlineformset_factory, formset_factory, BaseModelFormSet
 import string
 import random
@@ -20,7 +20,10 @@ def current_year():
 
 def year_choices():
     return [(r,r) for r in range(1960, datetime.today().year+1)]
-    
+
+def rounds_choices():
+    return [(r,r) for r in range(0,64)]
+
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
@@ -81,7 +84,6 @@ class CreateProfileModelForm(forms.ModelForm):
         fields = ['user','image','blood_group','dob','gender','marital_status']
 
 class BrotherForm(forms.ModelForm):
-    
     year_of_birth = forms.TypedChoiceField(coerce=int, choices=year_choices, initial=current_year)
     class Meta:
         model = Brother
@@ -89,9 +91,29 @@ class BrotherForm(forms.ModelForm):
         # exclude = ()
 
 
-
 BrotherFormSet = inlineformset_factory(User, Brother, form=BrotherForm, extra=2)
 
+class EducationForm(forms.ModelForm):
+    year_of_passout = forms.TypedChoiceField(coerce=int, choices=year_choices, initial=current_year)
+    class Meta:
+        model = Education
+        fields = '__all__'
+        exclude = ('user',)
+
+class ProfessionForm(forms.ModelForm):
+    class Meta:
+        model = Profession
+        fields = '__all__'
+        exclude = ('user',)
+
+class DevotionalForm(forms.ModelForm):
+    japa_rounds = forms.TypedChoiceField(coerce=int, choices=rounds_choices)
+    started_japa = forms.DateField(widget = forms.SelectDateWidget)
+    started_16japa = forms.DateField(widget = forms.SelectDateWidget)
+    class Meta:
+        model = Devotional
+        fields = '__all__'
+        exclude = ('user',)
 
 class UserUpdateForm(forms.ModelForm):
     # email = forms.EmailField()
@@ -101,6 +123,8 @@ class UserUpdateForm(forms.ModelForm):
 
 
 class ProfileUpdateForm(forms.ModelForm):
+    year_of_passout = forms.TypedChoiceField(coerce=int, choices=year_choices, initial=current_year)
+    dob = forms.DateField(widget = forms.SelectDateWidget)
     class Meta:
         model = Profile
         fields = '__all__'
