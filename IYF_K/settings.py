@@ -49,7 +49,6 @@ SOCIALACCOUNT_PROVIDERS = {
 
 ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_USERNAME_REQUIRED = False
-
 INSTALLED_APPS = [
     'user.apps.UserConfig',
     'django.contrib.admin',

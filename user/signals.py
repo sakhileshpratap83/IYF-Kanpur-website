@@ -1,10 +1,10 @@
-from django.db.models.signals import post_save#after an object is saved
+from django.db.models.signals import post_save#signal fired after an object is saved
 from django.contrib.auth.models import User
 from django.dispatch import receiver
-from .models import Profile
+from .models import Profile, Education, Profession, Devotional
 from allauth.account.signals import user_signed_up
 
-
+# purpose:for creating profile when the user is created, source:https://www.youtube.com/watch?v=FdVuKt_iuSI&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=8, timing:26min
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
     if created:
@@ -14,6 +14,38 @@ def create_profile(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_profile(sender, instance, **kwargs):
     instance.profile.save()
+
+
+@receiver(post_save, sender=User)
+def create_education(sender, instance, created, **kwargs):
+    if created:
+        Education.objects.create(user=instance)    
+
+
+@receiver(post_save, sender=User)
+def save_education(sender, instance, **kwargs):
+    instance.education.save()
+
+@receiver(post_save, sender=User)
+def create_profession(sender, instance, created, **kwargs):
+    if created:
+        Profession.objects.create(user=instance)    
+
+
+@receiver(post_save, sender=User)
+def save_profession(sender, instance, **kwargs):
+    instance.profession.save()
+
+@receiver(post_save, sender=User)
+def create_devotional(sender, instance, created, **kwargs):
+    if created:
+        Devotional.objects.create(user=instance)    
+
+
+@receiver(post_save, sender=User)
+def save_devotional(sender, instance, **kwargs):
+    instance.devotional.save()
+
 
 # #https://stackoverflow.com/questions/14523224/how-to-populate-user-profile-with-django-allauth-provider-information?answertab=votes#tab-top
 # @receiver(user_signed_up)

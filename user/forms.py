@@ -14,6 +14,9 @@ from datetime import datetime
 from django.http import HttpResponseRedirect, HttpResponse,QueryDict
 # import datetime
 
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
 
 def current_year():
     return datetime.today().year
@@ -24,7 +27,7 @@ def year_choices():
 def rounds_choices():
     return [(r,r) for r in range(0,64)]
 
-
+# for having datepicker in forms, source:https://stackoverflow.com/a/35968816
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
 
@@ -82,7 +85,7 @@ class CreateProfileModelForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['user','image','blood_group','dob','gender','marital_status']
-
+        
 class BrotherForm(forms.ModelForm):
     year_of_birth = forms.TypedChoiceField(coerce=int, choices=year_choices, initial=current_year)
     class Meta:
@@ -108,11 +111,17 @@ class ProfessionForm(forms.ModelForm):
 
 class DevotionalForm(forms.ModelForm):
     japa_rounds = forms.TypedChoiceField(coerce=int, choices=rounds_choices)
-    started_japa = forms.DateField(widget = forms.SelectDateWidget)
-    started_16japa = forms.DateField(widget = forms.SelectDateWidget)
+    # started_japa = forms.DateField()
+    year_introduce = forms.TypedChoiceField(empty_value="empty", coerce=int, choices=year_choices, initial=None)
+
+    # started_16japa = forms.DateField()
     class Meta:
         model = Devotional
         fields = '__all__'
+        widgets = {
+            'started_japa': DateInput(),
+            'started_16japa': DateInput(),
+        }
         exclude = ('user',)
 
 class UserUpdateForm(forms.ModelForm):
@@ -124,11 +133,15 @@ class UserUpdateForm(forms.ModelForm):
 
 class ProfileUpdateForm(forms.ModelForm):
     year_of_passout = forms.TypedChoiceField(coerce=int, choices=year_choices, initial=current_year)
-    dob = forms.DateField(widget = forms.SelectDateWidget)
+    # dob = forms.DateField()
     class Meta:
         model = Profile
         fields = '__all__'
+        widgets = {
+            'dob': DateInput(),
+        }
         exclude = ('user',)
+        
 
        
 # class SignupForm(ModelForm):

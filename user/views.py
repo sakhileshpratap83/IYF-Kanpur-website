@@ -1,5 +1,5 @@
 from .models import Profile, Brother
-from .forms import CreateProfileModelForm, UserRegisterForm, UserUpdateForm, ProfileUpdateForm, BrotherForm, SigninForm
+from .forms import CreateProfileModelForm, UserRegisterForm, UserUpdateForm, ProfileUpdateForm, BrotherForm, SigninForm, DevotionalForm, EducationForm, ProfessionForm 
 from django.forms import modelformset_factory, inlineformset_factory
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
@@ -179,13 +179,19 @@ def profile(request):
 	if request.method == 'POST':
 		# b_formset = BrotherFormset(request.POST, instance=request.user.profile.brother)
 		u_form = UserUpdateForm(request.POST, instance=request.user)
+		e_form = EducationForm(request.POST, instance=request.user)
+		prof_form = ProfessionForm(request.POST, instance=request.user)
+		d_form = DevotionalForm(request.POST, instance=request.user)
 		p_form = ProfileUpdateForm(request.POST,
 								   request.FILES,
 								   instance=request.user.profile)
 		# b_formset = BroFormSet(request.POST, instance = request.user)
-		if u_form.is_valid() and p_form.is_valid():# and b_formset.is_valid():# and b_form.is_valid():
+		if u_form.is_valid() and p_form.is_valid() and e_form.is_valid() and prof_form.is_valid() and d_form.is_valid():# and b_formset.is_valid():# and b_form.is_valid():
 			u_form.save()
 			p_form.save()
+			e_form.save()
+			prof_form.save()
+			d_form.save()
 			# b_formset.save()
 			# for b_form in b_formset:
 			# 	b_form.save()
@@ -196,10 +202,16 @@ def profile(request):
 		# b_formset = BrotherFormset(request.GET or None)
 		u_form = UserUpdateForm(instance=request.user)
 		p_form = ProfileUpdateForm(instance=request.user.profile)
+		e_form = EducationForm(instance=request.user.education)
+		prof_form = ProfessionForm(instance=request.user.profession)
+		d_form = DevotionalForm(instance=request.user.devotional)
 		# b_formset = BroFormSet(instance = request.user)
 	context = {
 		'u_form': u_form,
 		'p_form': p_form,
+		'e_form': e_form,
+		'prof_form': prof_form,
+		'd_form': d_form,
 		# 'b_formset' : b_formset,
 	}
 

@@ -1,4 +1,4 @@
-django-crispy
+django-crispy-forms
 django-allauth
 Pillow
 django
