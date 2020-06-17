@@ -27,7 +27,7 @@ SECRET_KEY = '6@1p&w8%8wi06^p93kju-brgi(e55t-+en3k0quv)0@x3rb&f)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["yogeshbulani.pythonanywhere.com", "127.0.0.1"]
 
 LOGIN_URL = '/user/signin'
 # Application definition
