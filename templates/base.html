@@ -14,41 +14,33 @@
   
   <link rel="stylesheet" type='text/css' href = "{% static 'css/home.css' %} ">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  
+  {% block title %}
+  <title>Enter the title</title>
+  {% endblock %}
 </head>
 
 <body>
     
     {% include 'navbar.html' %}
     {% include 'js.html' %}
-
+    
     <div class="container-fluid">
       <div class="row">
         <div class="col">
           {% if messages %}
-            {% for message in messages %}
-              <div class="alert alert-{{ message.tags }}">
+          {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
                 {{ message }}
               </div>
-            {% endfor %}
-          {% endif %}
+              {% endfor %}
+              {% endif %}
           {% block content %}{% endblock %}
         </div>
-        <!-- <div class="col-md-4">
-          <div class="content-section">
-            <h3>Our Sidebar</h3>
-            <p class='text-muted'>You can put any information here you'd like.
-              <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Announcements</li>
-                <li class="list-group-item list-group-item-light">Calendars</li>
-                <li class="list-group-item list-group-item-light">etc</li>
-              </ul>
-            </p>
-          </div>
-        </div> -->
+        
       </div>
     </div>
-
     
+    {% include 'footer.html' %}
   </body>
 </html>

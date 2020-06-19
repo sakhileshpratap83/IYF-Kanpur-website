@@ -1,0 +1,84 @@
+<style type="text/css">
+    .small, small {
+        color: white;
+    }
+
+    .footer-title{
+        color: white;
+        font-size: 1.8rem;
+        margin-bottom: 35px;
+    }
+
+    h3:after
+    {
+        margin-top: 5px;
+        content:'';
+        display:block;
+        width: 180px;
+        border:1.5px solid white;
+    }
+    .insidewrapper{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content :space-evenly;
+    }
+    h4{
+        font-size: 1rem;
+        color: rgb(204, 204, 211);
+        width: 75%;
+        text-align: left;
+    }
+    .content{
+        /* margin: 0px auto; */
+        /* margin: 1rem; */
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 300px;
+        width: 300px;
+        /* border: 2px solid red; */
+        overflow: auto;
+    }
+    .footer-img{
+        margin-bottom: 30px;
+        /* margin-bottom: 1.5rem; */
+        /* padding: 2rem; */
+        height: 150px;
+        width: 200px;
+    }
+    #info-footer{
+        height: 40vh;
+        width: 100%;
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        overflow: hidden;
+    }
+</style>
+
+<footer id="info-footer" class="py-4 bg-dark text-white-50">
+    <div class="insidewrapper">
+        <div class="content">
+            <img src="http://iskconkanpur.com/wp-content/uploads/2019/08/AC-Bhaktivedanta-Swami-Srila-Prabhupada_credit-Srilaprabhupada-wikicommons-300x225.jpg" alt="data:image/jpeg;base64,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" class=footer-img>
+            <h4>Founder - H.D.G. Acharya A.C. Bhaktivedanta Swami Prabhupada</h4>
+        </div>
+        <div class="content">
+            <h3 class=footer-title>Address</h3>
+            <h4>
+                Sri Sri Radha Madhava Mandir, Mainavati Marg, Bithoor Road, Kanpur, Uttar Pradesh Pincode: 208002
+            </h4>
+        </div>
+        <div class="content">
+            <h3 class=footer-title>Contact Us</h3>
+            <h4>Phone: +9170-8000-7011</h4>
+            <h4>
+                Email: info@iskconkanpur.com
+            </h4>
+        </div>
+        
+    </div>
+</footer>
+<footer id="relative-footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy;  ISKCON Kanpur. All rights reserved.</small>
+    </div>
+</footer>

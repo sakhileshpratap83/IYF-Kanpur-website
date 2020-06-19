@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!-- <script src="/static/formset/jquery.formset.js"></script> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" type='text/css' href="/static/css/home.css ">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+    <style type="text/css">
+        .container1 {
+            width: 100%;
+            height: fit-content;
+            border: 2px solid black;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+
+        .article-title {
+            color: rgb(4, 108, 156);
+            margin: 2rem;
+            padding: 1rem;
+            display: block;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .article {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: medium;
+            display: inline-block;
+            width: 40%;
+            text-align: justify;
+            /* background-color: tomato; */
+            margin: 1rem;
+            padding: 1rem;
+        }
+
+        .article-spread {
+            margin: 2.5rem;
+            padding: 1rem;
+            margin-bottom: 10rem;
+        }
+
+        .article-img {
+            align-self: center;
+            display: inline-block;
+            height: 60vh;
+            width: 50%;
+            overflow: hidden;
+            margin: 10px 10px;
+            padding: 5px;
+            border-radius: 10px;
+            position: relative;
+        }
+        #sticky-footer {
+            flex-shrink: none;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }   
+    </style>
+    <title>Srila Prabhupada</title>
+
+</head>
+
+<body>
+
+
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"> -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+        <a class="navbar-brand" href="/"><img src="/static/images/logo.png" height="50" width="50" alt="HK">IYF
+            Kanpur</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Festivals</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        About
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="/srila-prabhupada">Srila Prabhupada</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">ISKCON Kanpur</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">Activities</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact Us</a>
+                </li>
+                <!-- <li class="nav-item">
+        <a data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-log-in"></span> Login/Sign up</a>
+      </li> -->
+
+            </ul>
+
+            <!--  <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+            <!--  -->
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Settings
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/user/profile">yogesh_bulani</a>
+                        <a class="dropdown-item" href="/user/logout">Logout</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <!-- 
+          <li class="nav-item"> 
+          <a class="nav-link" href="/user/logout"><span class="glyphicon glyphicon-log-out"></span>Log out</a> -->
+                </li>
+            </ul>
+
+            <!--  -->
+
+
+        </div>
+    </nav>
+
+
+    <!-- <div id="loginModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"> &times;</button>
+        <h4>Login</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-inline">
+          <div class="form-group">
+            <label class="sr-only" for="email">Email</label><input type="text" class="form-control input-sm" placeholder="Email" id="email" name="email">
+          </div>
+          <div class="form-group">
+
+            <label class="sr-only" for="password">Password</label>
+            <input type="password" class="form-control input-sm" placeholder="Password" id="password" name="password"></div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"> Remember me
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-info btn-xs">Sign in</button>
+          <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">Cancel</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h2 class="article-title">Srila Prabhupada: A Biography</h2>
+                <div class="container1">
+                    <div class="article">
+                        His Divine Grace A. C. Bhaktivedanta Swami Prabhupada was born in 1896 in Calcutta, India. He
+                        first met his
+                        spiritual master, Srila Bhaktisiddhanta Sarasvati Gosvami, in Calcutta in 1922.
+                        Bhaktisiddhanta Sarasvati, a prominent devotional scholar and the founder of sixty-four branches
+                        of Gaudiya
+                        Mathas (Vedic institutes), liked this educated young man and convinced him to dedicate his life
+                        to teaching
+                        Vedic knowledge in the Western world. Srila Prabhupada became his student, and eleven years
+                        later (1933) at
+                        Allahabad, he became his formally initiated disciple.
+                        <br>
+                        <br>
+                        <br>
+
+                    </div>
+                    <img src="https://i.pinimg.com/originals/2c/02/bb/2c02bb181b843166434afb48a67cd539.jpg"
+                        alt="http://iysmumbai.com/wp-content/uploads/2013/06/sp%20(1).jpg" class=article-img>
+
+
+                    <div class="article-spread">
+                        At their first meeting, in 1922, Srila Bhaktisiddhanta Sarasvati Thakura requested Srila
+                        Prabhupada to broadcast
+                        Vedic knowledge through the English language. In the years that followed, Srila Prabhupada wrote
+                        a commentary on
+                        the Bhagavad-gita and in 1944, without assistance, started an English fortnightly magazine.
+                        <br>
+                        <br>
+                        <br>
+                        Recognizing Srila Prabhupada's philosophical learning and devotion, the Gaudiya Vaisnava Society
+                        honored him in
+                        1947 with the title "Bhaktivedanta." In 1950, at the age of fifty-four, Srila Prabhupada retired
+                        from married
+                        life, and four years later he adopted the vanaprastha (retired) order to devote more time to his
+                        studies and
+                        writing. Srila Prabhupada traveled to the holy city of Vrndavana, where he lived in very humble
+                        circumstances in
+                        the historic medieval temple of Radha-Damodara. There he engaged for several years in deep study
+                        and writing. He
+                        accepted the renounced order of life (sannyasa) in 1959. At Radha-Damodara, Srila Prabhupada
+                        began work on his
+                        life's masterpiece: a multivolume translation and commentary on the 18,000-verse
+                        Srimad-Bhagavatam (Bhagavata
+                        Purana). He also wrote Easy Journey to Other Planets.
+                        <br>
+                        <br>
+                        <br>
+                        After publishing three volumes of Bhagavatam, Srila Prabhupada came to the United States, in
+                        1965, to fulfill
+                        the mission of his spiritual master. Since that time, His Divine Grace has written over sixty
+                        volumes of
+                        authoritative translations, commentaries and summary studies of the philosophical and religious
+                        classics of
+                        India.
+
+                        In 1965, at the age of seventy that he would set off on his mission to the West.Abhay Charan,
+                        now known as
+                        Bhaktivedanta Swami (an honorary title awarded by his peers), was given free passage aboard a
+                        cargo ship to New
+                        York. The journey proved to be treacherous, and he suffered two heart attacks while on the ship.
+                        After 35 days
+                        at sea he finally arrived at a lonely Brooklyn pier with just seven dollars in Indian rupees and
+                        one crate of
+                        his translations of sacred Sanskrit texts.
+                        <br>
+                        <br>
+                        <br>
+                        
+                        In New York he faced great hardships, and was regularly without money and a steady place to
+                        live. He began his
+                        mission humbly, giving classes on the Bhagavad-gita in lofts in the Bowery (New York’s infamous
+                        skid row), and
+                        leading kirtan (traditional devotional chants) in Tompkins Square Park. His message of peace and
+                        goodwill
+                        resonated strongly with the hippie community and younger generation, some of whom came forward
+                        to become serious
+                        students of the Bhakti-yoga (loving devotion to God) tradition. With the help of these
+                        followers, who
+                        affectionately began calling Bhaktivedanta Swami “Swamiji,” a small storefront was rented on New
+                        York’s Lower
+                        East Side to use as a temple. In July 1966, After almost a year of adversity and struggle,
+                        Swamiji established
+                        the International Society for Krishna Consciousness for the purpose of working for real unity
+                        and peace and
+                        reinstating proper values in the world.
+                        <br>
+                        <br>
+                        <br>
+                        He taught that each soul is part and parcel of the quality of God and that one could find true
+                        happiness through
+                        living a simpler, more natural way of life and dedicating one’s energy in the service of God and
+                        all living
+                        beings.Having begun initiating his New York followers into the Gaudiya Vaishnava lineage (the
+                        line of
+                        Bhakti-yoga stemming from the 16th century saint Sri Krishna Caitanya), Swamiji next travelled
+                        to San Francisco.
+                        Amidst the emerging hippie community in the Haight-Ashbury district, during 1967’s “Summer of
+                        Love,” he taught
+                        that the experience of devotion through Bhakti-yoga was a spiritual “high” superior to any
+                        pleasures derived
+                        from material sources such as wealth, fame, or intoxication. In the following months, many more
+                        people came
+                        forward to study under him and assist him.
+                        <br>
+                        <br>
+                        <br>
+                        Desiring to address him with the respect due to a revered spiritual teacher, his disciples began
+                        to call him
+                        Srila Prabhupada, meaning “one at whose feet the masters sit”.In the eleven years that followed,
+                        Srila
+                        Prabhupada circled the globe fourteen times, bringing the teachings of Bhakti-yoga to many
+                        thousands of people
+                        across all six continents. Men and women of all ages and backgrounds accepted his message and
+                        integrated the
+                        teachings into their lives. With his disciples’ help, Srila Prabhupada established centers and
+                        projects
+                        throughout the world, including temples, rural communities, educational institutions, and what
+                        would become the
+                        world’s largest food relief program (which happens to be vegetarian). Srila Prabhupada returned
+                        to India several
+                        times where he sparked a revival of the Bhakti-yoga tradition and opened many temples, including
+                        important
+                        centers in the holy towns of Vrindavana and Mayapur.Srila Prabhupada’s most significant
+                        contribution, however,
+                        is his books.
+                        <br>
+                        <br>
+                        <br>
+                        He authored over seventy authentic volumes on Bhakti-yoga, which are highly respected for their
+                        authority,
+                        depth, clarity, and fidelity to tradition. His writings have been translated into seventy-six
+                        languages and are
+                        used as standard textbooks in most colleges around the world. His most prominent works
+                        include:Bhagavad-gita As
+                        It Is, the thirty-volume Srimad-Bhagavatam, and the seventeen-volume Sri Caitanya-caritamrita.
+                        To see the list
+                        of all books toggle “Books by Srila Prabhupada”.A. C. Bhaktivedanta Swami Prabhupada left this
+                        world on November
+                        14, 1977 in the holy town of Vrindavan.
+                    </div>
+                    
+                    
+                    
+                </div>
+                <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+                    <div class="container text-center">
+                      <small>Copyright &copy; Your Website</small>
+                    </div>
+                </footer>
+            </div>
+            
+        </div>
+        
+    </body>
+
+</html>

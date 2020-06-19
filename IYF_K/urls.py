@@ -35,6 +35,8 @@ from .views import (
 	about_page,
 	contact_page,
 	diff_render_page,
+	aboutSP_page,
+
 	)
 
 
@@ -49,7 +51,8 @@ urlpatterns = [
 	# path('user/register', register, name='register'),
     # re_path(r'^blog/(?P<post_id>\w+)/$', indDevoteeDetailPage),
 	re_path(r'^pages?',about_page),
-	path('about/', about_page),
+	path('about/', about_page, name='about'),
+	path('srila-prabhupada/', aboutSP_page, name='aboutSP'),
 	path('contact/', contact_page),
 	path('diff_render_page/', diff_render_page),
     path('', TemplateView.as_view(template_name="user/signin.html")),

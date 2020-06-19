@@ -38,6 +38,9 @@ def about_page(request):
     var = "About"  # acting as second element of dictionary
     return render(request, "about.html", {"title": var})
 
+def aboutSP_page(request):
+    var = "Srila Prabhupada"
+    return render(request, "aboutSP.html", {"title" : var})
 
 def contact_page(request):
     var = "Contact Us"  # acting as second element of dictionary[called context]
